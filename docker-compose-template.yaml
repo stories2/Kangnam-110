@@ -53,20 +53,20 @@ services:
       - "mariadb:db"
   codeserver:
     image: codercom/code-server:3.10.1
-      container_name: code
-      volumes:
-        - ./vscode/projects:/root/projects
-        - ./vscode/data:/data
+    container_name: code
+    volumes:
+      - ./vscode/projects:/root/projects
+      - ./vscode/data:/data
 #        If u use https://github.com/jwilder/nginx-proxy (recommended)
-      environment:
-        VIRTUAL_HOST: kws0.kangnam.ac.kr
-        VIRTUAL_PORT: 8443
+    environment:
+      VIRTUAL_HOST: kws0.kangnam.ac.kr
+      VIRTUAL_PORT: 8443
 #      ports:
           # With SSL
 #        - "443:8443"
           # With HTTP
           #- "80:8443"
-      command: code-server --allow-http # if using proxy add: --allow-http
+    command: code-server --allow-http # if using proxy add: --allow-http
 #       Connect via network
 #        networks:
 #            outpost_network:
