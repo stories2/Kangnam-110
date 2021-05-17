@@ -58,8 +58,9 @@ services:
       - kws0_net  
     restart: always
     volumes:
-      - ./vscode/projects:/root/projects
-      - ./vscode/data:/data
+      - ./vscode/.config:/home/coder/.config
+      - ./vscode/projects:/home/coder/project
+#      - ./vscode/data:/data
 #        If u use https://github.com/jwilder/nginx-proxy (recommended)
     environment:
       VIRTUAL_HOST: kws0.kangnam.ac.kr
