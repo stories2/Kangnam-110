@@ -54,6 +54,8 @@ services:
   codeserver:
     image: codercom/code-server:3.10.1
     container_name: code
+    networks:
+      - kws0_net  
     volumes:
       - ./vscode/projects:/root/projects
       - ./vscode/data:/data
@@ -61,9 +63,9 @@ services:
     environment:
       VIRTUAL_HOST: kws0.kangnam.ac.kr
       VIRTUAL_PORT: 8443
-#      ports:
+    ports:
           # With SSL
-#        - "443:8443"
+      - "8888:8443"
           # With HTTP
           #- "80:8443"
     command: code-server --allow-http # if using proxy add: --allow-http
