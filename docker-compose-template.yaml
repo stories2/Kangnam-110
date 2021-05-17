@@ -57,9 +57,11 @@ services:
     networks:
       - kws0_net  
     restart: always
+    user: coder
     volumes:
-      - ./vscode/.config:/home/coder/.config
+      #- ./vscode/.config:/home/coder/.config
       - ./vscode/projects:/home/coder/project
+      - ./vscode/share:/home/coder/.local/share/code-server
 #      - ./vscode/data:/data
 #        If u use https://github.com/jwilder/nginx-proxy (recommended)
     environment:
