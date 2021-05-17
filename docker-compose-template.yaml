@@ -64,9 +64,9 @@ services:
     environment:
       VIRTUAL_HOST: kws0.kangnam.ac.kr
       VIRTUAL_PORT: 8443
-    ports:
+#    ports:
           # With SSL
-      - "8888:8080"
+#      - "8888:8080"
           # With HTTP
           #- "80:8443"
 #    command: code-server --allow-http # if using proxy add: --allow-http
