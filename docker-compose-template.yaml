@@ -13,6 +13,7 @@ services:
     image: nginx_cust
     volumes:
       - ./html:/usr/share/nginx/html/
+      - ./vscode/projects/dist:/usr/share/nginx/html/vscode
       - ./letsencrypt:/etc/letsencrypt
     ports:
       - "80:80"
